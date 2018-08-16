@@ -8,3 +8,12 @@ h5.more-info-text {
 div.more-info-container {
 	margin: 80px 0;
 }
+p.more-info-text {
+	font-size: 22px;
+	margin: 8px 0;
+	color: #222;
+}
+div.more-info-container > button.banner-btn {
+	background: #FFF;
+	color: #222;
+}

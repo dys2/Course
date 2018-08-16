@@ -4,7 +4,7 @@ let make = _children => {
 	...component,
 	render: _self =>
 		<div>
-			<LandingBanner />
+			<LandingBanner message="Check Out Courses Below" showCoursesBtn=false />
 			<CoursesList />
 		</div>
 }

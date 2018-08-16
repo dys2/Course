@@ -2,6 +2,7 @@
 
 [@bs.module] external logo : string = "../logo.svg";
 
+
 let component = ReasonReact.statelessComponent("LandingHeader");
 
 let items: array(string) = [|"Courses", "Blog", "Log In"|];
@@ -14,7 +15,7 @@ let make = _children => {
 			<div>
 				(ReasonReact.array(
 						Array.map(
-						item => <p className="landing-header-item" onClick=(_event => ReasonReact.Router.push(String.lowercase(item))) >(ReasonReact.string(item))</p>,
+						item => <p className="landing-header-item" onClick=(_event => ReasonReact.Router.push(String.lowercase(Js.String.replace(" ", "", item)))) >(ReasonReact.string(item))</p>,
 						items
 					)
 				))

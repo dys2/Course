@@ -24,15 +24,15 @@ let innerDivStyle = ReactDOMRe.Style.make(
 );
 
 
-let make = _children => {
+let make = (~message, ~showCoursesBtn, _children) => {
 	...component,
 	render: _self =>
 		<div style=(divStyle)>
 			<div style=(innerDivStyle)>
 				<LandingHeader />
 				<img className="react-img" src={reactSVG} alt="react" />
-				<h3 className="banner-text">(ReasonReact.string("Cutting Edge Curriculum for Cutting Edge Developers"))</h3>
-				<button className="banner-btn" onClick=(_event => ReasonReact.Router.push("courses"))>(ReasonReact.string("COURSES"))</button>
+				<h3 className="banner-text">(ReasonReact.string(message))</h3>
+				<button className="banner-btn" onClick=(_event => ReasonReact.Router.push(showCoursesBtn ? "courses" : "signup"))>(ReasonReact.string(showCoursesBtn ? "COURSES" : "SIGN UP"))</button>
 			</div>
 		</div>
 }

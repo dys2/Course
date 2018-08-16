@@ -5,6 +5,9 @@
 type route =
   | Courses
   | SignUp
+  | LogIn
+  | Donate
+  | Blog
   | Landing;
 
 type state = {
@@ -29,6 +32,9 @@ let make = (_children) => {
       switch (url.path) {
         | ["courses"] => self.send(ChangeRoute(Courses))
         | ["signup"] => self.send(ChangeRoute(SignUp))
+        | ["login"] => self.send(ChangeRoute(LogIn))
+        | ["donate"] => self.send(ChangeRoute(Donate))
+        | ["blog"] => self.send(ChangeRoute(Blog))
         | [] => self.send(ChangeRoute(Landing))
       }
     });
@@ -41,6 +47,9 @@ let make = (_children) => {
           | Landing => <Landing />
           | Courses => <Courses />
           | SignUp => <SignUp />
+          | LogIn => <LogIn />
+          | Blog => <Blog />
+          | Donate => <Donate />
         }
       )
     </div>,

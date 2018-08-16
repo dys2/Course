@@ -1,0 +1,28 @@
+div.donate-container {
+	padding-top: 80px;
+}
+div.donate-container > h3 {
+	font-size: 56px;
+	color: #222;
+}
+div.donate-container > .donation-box-container {
+	display: inline-grid;
+	align-self: center;
+	grid-gap: 40px 40px;
+	grid-template-columns: 400px 400px;
+	justify-self: center;
+}
+div.donation-box  {
+	/* border: outset #888 1px; */
+}
+.donation-box > h5 {
+	font-size: 24px;
+	color: #222;
+	text-decoration: underline;
+}
+div.donation-selections {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 20px;
+}
