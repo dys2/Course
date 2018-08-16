@@ -1,0 +1,11 @@
+div.courses-list-container {
+	display: inline-grid;
+	justify-items: center;
+	grid-gap: 50px 100px;
+	justify-content: center;
+}
+h5.courses-list-text {
+	font-size: 28px;
+	margin: 24px 0;
+	color: #222;
+}

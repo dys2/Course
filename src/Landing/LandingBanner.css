@@ -1,0 +1,20 @@
+.react-img {
+	width: 320px;
+	margin-top: 4%;
+	margin-bottom: 4%;
+}
+.banner-btn {
+	height: 60px;
+	width: 180px;
+	background-color: #222;
+	color: #FFF;
+	border: #333 solid 1px;
+	border-radius: 6px;
+	font-size: 22px;
+	letter-spacing: .06em;
+	cursor: pointer;
+	margin-top: 40px;
+}
+h3.banner-text {
+	font-size: 34px;
+}

@@ -1,0 +1,32 @@
+.landing-header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	height: 80px;
+	width: calc(100vw - 60px);
+	padding: 0 30px;
+	box-shadow: 2px 2px 2px rgba(40, 40, 40, .4);
+}
+.landing-header-container > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.landing-header-container > img {
+	height: 40px;
+}
+
+.landing-header-item {
+	font-size: 20px;
+	color: #222;
+	display: flex;
+	margin: 0;
+	align-items: center;
+	height: 100%;
+	flex-direction: row;
+	justify-content: center;
+	width: 120px;
+}
