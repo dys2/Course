@@ -1,7 +1,16 @@
 {
   "name": "reason-scripts",
-  "sources": ["src", "src/Landing", "src/Courses", "src/SignUp", "src/LogIn", "src/Donate", "src/Blog"],
-  "bs-dependencies": ["reason-react", "@glennsl/bs-jest"],
+  "sources": [
+    "src",
+    "src/Landing",
+    "src/Courses",
+    "src/SignUp",
+    "src/LogIn",
+    "src/Donate",
+    "src/Blog",
+    "src/Welcome"
+  ],
+  "bs-dependencies": ["reason-react", "@glennsl/bs-jest", "bs-axios", "bs-fetch"],
   "reason": {
     "react-jsx": 2
   },
