@@ -1,9 +1,17 @@
 [%bs.raw {|require('./CourseListCourse.css')|}];
 
+type lesson = {
+  title: string,
+  description: string,
+  video: string
+}
+
 type course = {
+  id: int,
 	name: string,
 	description: string,
-	image: string
+  image: string,
+  lessons: array(lesson)
 };
 
 let component = ReasonReact.statelessComponent("CourseListCourse");

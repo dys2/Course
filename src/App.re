@@ -5,6 +5,7 @@
 external promiseErrorToJsObj : Js.Promise.error => Js.t('a) = "%identity";
 
 type route =
+  | Course(string)
   | Courses
   | SignUp
   | LogIn
@@ -12,11 +13,11 @@ type route =
   | Blog
   | Welcome
   | Landing;
-
+ 
 
 type state = {
   route: route,
-  auth: bool,
+  auth:  bool,
   signedUp: bool
 };
 
@@ -37,7 +38,18 @@ type data = Js.t({
   token: string
 })
 
+
 let component = ReasonReact.reducerComponent("App");
+
+
+let checkAuth = (self) =>
+  Js.Promise.(
+    API.fetch(~endpoint="check_auth", ~body="", ~method=Get)
+    	|> then_(_res => resolve())
+			|> catch(_err => resolve())
+			|> ignore
+  );
+  
 
 let logIn = (email, password, self) => {
   let user = {
@@ -100,17 +112,25 @@ let make = (_children) => {
       | LogIn => ReasonReact.Update({...state, auth: true})
       | SignUp => ReasonReact.Update({...state, signedUp: true})
     },
+
   didMount: self => {
+    
+    let token = Dom.Storage.(localStorage |> getItem("token"));
+    switch(token) {
+      | None => Js.log("No Token Saved")
+      | Some(avs) => self.send(LogIn)
+    }
     let watcherID = ReasonReact.Router.watchUrl(url => {
       switch (url.path) {
         | ["courses"] => self.send(ChangeRoute(Courses))
+        | ["course", id] => self.send(ChangeRoute(Course(id)))
         | ["signup"] => self.send(ChangeRoute(SignUp))
         | ["login"] => self.send(ChangeRoute(LogIn))
         | ["donate"] => self.send(ChangeRoute(Donate))
         | ["blog"] => self.send(ChangeRoute(Blog))
         | ["welcome"] => self.send(ChangeRoute(Welcome))
         | [] => self.send(ChangeRoute(Landing))
-        | _ => self.send(ChangeRoute(Landing))
+        | _ => Js.log(url)
       }
     });
     self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
@@ -120,6 +140,7 @@ let make = (_children) => {
       (
         switch (self.state.route) {
           | Landing => <Landing />
+          | Course(id) => <Course id=int_of_string(id) />
           | Courses => <Courses />
           | SignUp => <SignUp signedUp=self.state.signedUp signUp=(signUpData => signUp(signUpData, self)) />
           | LogIn => <LogIn logIn=((email, password) => logIn(email, password, self)) />

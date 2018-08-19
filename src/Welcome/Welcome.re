@@ -28,23 +28,14 @@ let make = (~auth, ~logIn, _children) => {
 		},
 	didMount: self => {
 		Js.Promise.(
-			Fetch.fetchWithInit(
-				"http://localhost:5000/verify_user",
-				Fetch.RequestInit.make(
-					~method_=Put,
-					~body=Fetch.BodyInit.make(""),
-					~headers=Fetch.HeadersInit.make({
-						"Content-Type": "application/json",
-						"Authorization": Dom.Storage.(
-							localStorage |> getItem("token")
-						)
-					}),
-					()
-				)
+			API.fetch(
+				~endpoint="verify_user",
+        ~method=Put,
+        ~body=""
 			)
 			|> then_(_res => {
-				self.send(Verify)
-				resolve()
+				self.send(Verify);
+				resolve();
 			})
 			|> catch(_err => resolve())
 			|> ignore

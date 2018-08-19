@@ -3,6 +3,7 @@
   "sources": [
     "src",
     "src/Landing",
+    "src/Course",
     "src/Courses",
     "src/SignUp",
     "src/LogIn",

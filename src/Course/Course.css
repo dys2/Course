@@ -1,0 +1,74 @@
+div.course-page {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+}
+
+div.course-page-header-container {
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: #FFF;
+  overflow: hidden;
+}
+div.course-page-progress {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+div.course-page-header-container > div.course-page-header-info {
+  width: 55%;
+  height: 100%;
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.course-page-header-image> img {
+  max-width: 95%;
+  height: auto;
+  width: auto;
+  max-height: 180px;
+}
+
+div.course-page-header-image {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+}
+
+div.course-page-container {
+  max-width: 640px;
+  min-height: 680px;
+  border: #FFF solid 2px;
+  border-radius: 6px;
+  margin: 20px 0;
+  padding: 12px 8px;
+}
+div.course-page-header-container div.progress-total {
+  height: 32px;
+}
+div.course-page-progress > button {
+  height: 60px;
+	width: 180px;
+	background-color: #FFF;
+	color: #222;
+	border: #333 solid 1px;
+	border-radius: 6px;
+	font-size: 22px;
+	letter-spacing: .06em;
+  cursor: pointer;
+}
+.course-shadow {
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12), 0 1px 2px rgba(255,255,255,0.24);
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.course-shadow:hover {
+  box-shadow: 0 14px 28px rgba(255,255,255,0.25), 0 10px 10px rgba(255,255,255,0.22);
+}
