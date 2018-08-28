@@ -1,0 +1,7 @@
+div.lesson-container {
+	display: flex;
+	flex-direction: row;
+}
+div.lesson-page {
+	padding-top: 80px;
+}

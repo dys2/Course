@@ -8,6 +8,7 @@ type route =
   | Course(string)
   | Courses
   | SignUp
+  | Lesson(int, int)
   | LogIn
   | Donate
   | Blog
@@ -123,6 +124,7 @@ let make = (_children) => {
     let watcherID = ReasonReact.Router.watchUrl(url => {
       switch (url.path) {
         | ["courses"] => self.send(ChangeRoute(Courses))
+        | ["course", courseId, "lesson", index] => self.send(ChangeRoute(Lesson(int_of_string(courseId), int_of_string(index))))
         | ["course", id] => self.send(ChangeRoute(Course(id)))
         | ["signup"] => self.send(ChangeRoute(SignUp))
         | ["login"] => self.send(ChangeRoute(LogIn))
@@ -143,6 +145,7 @@ let make = (_children) => {
           | Course(id) => <Course id=int_of_string(id) />
           | Courses => <Courses />
           | SignUp => <SignUp signedUp=self.state.signedUp signUp=(signUpData => signUp(signUpData, self)) />
+          | Lesson(courseId, index) => <Lesson courseId=courseId index=index />
           | LogIn => <LogIn logIn=((email, password) => logIn(email, password, self)) />
           | Blog => <Blog />
           | Welcome => <Welcome auth=self.state.auth logIn=((email, password) => logIn(email, password, self)) />

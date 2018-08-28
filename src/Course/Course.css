@@ -2,6 +2,21 @@ div.course-page {
   min-height: 100vh;
   width: 100%;
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.course-page > h4 {
+  font-size: 26px;
+}
+div.course-page > ul {
+  max-width: 800px;
+  width: 100%;
+  align-self: center;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0 40px;
 }
 
 div.course-page-header-container {
@@ -12,6 +27,7 @@ div.course-page-header-container {
   background: #222;
   color: #FFF;
   overflow: hidden;
+  width: 100%;
 }
 div.course-page-progress {
   display: flex;

@@ -15,7 +15,7 @@ let make = _children => {
 			<div>
 				(ReasonReact.array(
 						Array.map(
-						item => <p key=(item) className="landing-header-item" onClick=(_event => ReasonReact.Router.push(String.lowercase(Js.String.replace(" ", "", item)))) >(ReasonReact.string(item))</p>,
+						item => <p key=(item) className="landing-header-item" onClick=(_event => ReasonReact.Router.push("/" ++ String.lowercase(Js.String.replace(" ", "", item)))) >(ReasonReact.string(item))</p>,
 						items
 					)
 				))

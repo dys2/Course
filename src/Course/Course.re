@@ -7,7 +7,7 @@ type state = {
 let component = ReasonReact.reducerComponent("Course");
 
 
-let make = (~id, _children) => {
+let make = (~id: int, _children) => {
   ...component,
   initialState: () => {course: Array.get(CoursesList.courses, id)},
   reducer: ((), _) => ReasonReact.NoUpdate,
@@ -27,15 +27,14 @@ let make = (~id, _children) => {
           <img src={self.state.course.image} alt={self.state.course.name}/>
         </div>
       </div>
-        <h4>(ReasonReact.string("Lessons"))</h4>
-        <ul>
-          (ReasonReact.array(
-            Array.map(
-              lesson => <CourseLessonItem lesson=lesson />,
-              self.state.course.lessons
-            )
-          ))
-        </ul>
-
+      <h4>(ReasonReact.string("Lessons"))</h4>
+      <ul>
+        (ReasonReact.array(
+          Array.mapi(
+            (ind, lesson) => <CourseLessonItem courseId=id index=ind lesson=lesson />,
+            self.state.course.lessons
+          )
+        ))
+      </ul>
     </div>
 }

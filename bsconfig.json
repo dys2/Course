@@ -6,6 +6,7 @@
     "src/Course",
     "src/Courses",
     "src/SignUp",
+    "src/Lesson",
     "src/LogIn",
     "src/Donate",
     "src/Blog",

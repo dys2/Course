@@ -2,4 +2,8 @@ li.course-lesson-item {
   list-style-type: none;
   color: #333;
   text-align: left;
+  border-bottom: 1px solid rgba(50, 50, 50, .4);
+}
+li.course-lesson-item:last-child {
+  border-bottom: none;
 }

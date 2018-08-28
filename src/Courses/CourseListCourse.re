@@ -3,7 +3,7 @@
 type lesson = {
   title: string,
   description: string,
-  video: string
+	video: string
 }
 
 type course = {
@@ -16,11 +16,10 @@ type course = {
 
 let component = ReasonReact.statelessComponent("CourseListCourse");
 
-
 let make = (~course, _children) => {
 	...component,
 	render: _self =>
-		<div className="course-container">
+		<div className="course-container" onClick={_event => ReasonReact.Router.push("/course/" ++ string_of_int(course.id))}>
 			<img src={course.image} alt=course.name />
 			<h5>(ReasonReact.string(course.name))</h5>
 			<p>(ReasonReact.string(course.description))</p>
