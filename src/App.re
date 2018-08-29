@@ -7,6 +7,7 @@ external promiseErrorToJsObj : Js.Promise.error => Js.t('a) = "%identity";
 type route =
   | Course(string)
   | Courses
+  | Create
   | SignUp
   | Lesson(int, int)
   | LogIn
@@ -126,6 +127,7 @@ let make = (_children) => {
         | ["courses"] => self.send(ChangeRoute(Courses))
         | ["course", courseId, "lesson", index] => self.send(ChangeRoute(Lesson(int_of_string(courseId), int_of_string(index))))
         | ["course", id] => self.send(ChangeRoute(Course(id)))
+        | ["create"] => self.send(ChangeRoute(Create))
         | ["signup"] => self.send(ChangeRoute(SignUp))
         | ["login"] => self.send(ChangeRoute(LogIn))
         | ["donate"] => self.send(ChangeRoute(Donate))
@@ -141,6 +143,7 @@ let make = (_children) => {
     <div className="App">
       (
         switch (self.state.route) {
+          | Create => <Create />
           | Landing => <Landing />
           | Course(id) => <Course id=int_of_string(id) />
           | Courses => <Courses />

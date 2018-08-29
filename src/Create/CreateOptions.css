@@ -1,0 +1,16 @@
+ul.create-options {
+  display: flex;
+  flex-direction: row;
+  height: 68px;
+  background: #333;
+  color: #FFF;
+  list-style: none;
+}
+
+ul.create-options > li {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

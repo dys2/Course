@@ -5,6 +5,7 @@
     "src/Landing",
     "src/Course",
     "src/Courses",
+    "src/Create",
     "src/SignUp",
     "src/Lesson",
     "src/LogIn",

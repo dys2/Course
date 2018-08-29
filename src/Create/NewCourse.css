@@ -1,0 +1,60 @@
+div.new-course {
+  background: #FFF;
+}
+
+form.new-course-basic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 1000px;
+}
+form.new-course-basic > input {
+  width: 380px;
+  height: 36px;
+  font-size: 24px;
+  margin: 10px auto;
+}
+form.new-course-basic > textarea {
+  width: 380px;
+  height: 120px;
+  font-size: 24px;
+  margin: 10px auto;
+}
+
+form.new-course-basic > input[type="file"] {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+form.new-course-basic > input[type="submit"] {
+  height: 48px;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+form.new-course-basic > input[type="submit"]:hover {
+  opacity: .6;
+}
+form.new-course-basic > input[type="file"] + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+    height: 48px;
+    line-height: 48px;
+}
+
+form.new-course-basic > input[type="file"] + label:hover {
+  opacity: .6;
+}
+
+form.new-course.basic > input[type="file"]:focus + label,
+form.new-course.basic > input[type="file"] + label:hover {
+    background-color: red;
+}
