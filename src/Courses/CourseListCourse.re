@@ -33,7 +33,7 @@ let make = (~course, _children) => {
 
 
 
-let jsComponent =
+let default =
   ReasonReact.wrapReasonForJs(~component, jsProps =>
     make(
 			~course=?jsProps->courseGet,

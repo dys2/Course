@@ -2,6 +2,8 @@ import React from 'react';
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
+import CourseListCourse from './CourseListCourse.bs';
+
 // const CourseListCourse = require('./CourseListCourse.bs').jsComponent;
 
 
@@ -14,24 +16,20 @@ const GET_COURSES = gql`
 `;
 
 export default class extends React.Component {
-	componentDidMount() {
-		console.log('sdfsdfd');
-	}
 	render() {
 		return (
-			<div>
-			<h1>DFSDFSD</h1>
 			<Query query={GET_COURSES}>
 				{
 					({loading, error, data}) => {
-						console.log('dsfsdf', data);
 						if (loading) return "Loading";
 						if (error) return "error";
-						return <div></div>
+						return data.map(
+							course =>
+								<CourseListCourse course={course} />
+						);
 					}
 				}
 			</Query>
-			</div>
 		)
 	}
 }
