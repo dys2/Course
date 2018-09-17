@@ -13,7 +13,7 @@
     "src/Blog",
     "src/Welcome"
   ],
-  "bs-dependencies": ["reason-react", "@glennsl/bs-jest", "bs-axios", "bs-fetch"],
+  "bs-dependencies": ["reason-react", "reason-apollo", "@glennsl/bs-jest", "bs-axios", "bs-fetch"],
   "reason": {
     "react-jsx": 2
   },

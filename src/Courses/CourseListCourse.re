@@ -14,6 +14,11 @@ type course = {
   lessons: array(lesson)
 };
 
+[@bs.deriving abstract]
+type jsProps = {
+  course
+};
+
 let component = ReasonReact.statelessComponent("CourseListCourse");
 
 let make = (~course, _children) => {
@@ -25,3 +30,13 @@ let make = (~course, _children) => {
 			<p>(ReasonReact.string(course.description))</p>
 		</div>
 }
+
+
+
+let jsComponent =
+  ReasonReact.wrapReasonForJs(~component, jsProps =>
+    make(
+			~course=?jsProps->courseGet,
+			[||],
+    )
+  );

@@ -15,7 +15,7 @@ type route =
   | Blog
   | Welcome
   | Landing;
- 
+
 
 type state = {
   route: route,

@@ -63,18 +63,20 @@ let courses: array(CourseListCourse.course) = [|
 	}
 |];
 
-let make = _children => {
+
+let make = children => {
 	...component,
 	render: _self =>
 		<div className="courses-list-container">
 			<h5 className="courses-list-text">(ReasonReact.string("Courses"))</h5>
-			(
+			/* (
 				ReasonReact.array(
 					Array.map(
 						course => <CourseListCourse course=(course) />,
 						courses
 					)
 				)
-			)
+      ) */
+      <CoursesListQuery />
 		</div>
 }

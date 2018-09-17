@@ -7,7 +7,7 @@ export default class Plyr extends Component {
     this.player = plyr.setup('#plyr-player', options);
   }
   componentWillUnmount() {
-    if (this.player.length > 0) {
+    if (this.player && this.player.length > 0) {
       for (const playerEl of this.player) {
         playerEl.destroy();
       }
@@ -21,7 +21,6 @@ export default class Plyr extends Component {
     return (
 		<video poster={poster} id="player" playsinline controls>
 				<source src={videoUrl} type="video/mp4" />
-
 		</video>
     );
   }

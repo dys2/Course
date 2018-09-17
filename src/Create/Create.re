@@ -24,7 +24,15 @@ let make = _children => {
     },
 	render: self =>
 		<div style={ReactDOMRe.Style.make(~backgroundColor="#333", ())}>
-      <h1>(ReasonReact.string("Creation Station"))</h1>
+      <h1
+        style={ReactDOMRe.Style.make(
+          ~color="#FFF",
+          ~margin="0",  
+          ()
+        )}
+      >
+        (ReasonReact.string("Creation Station"))
+      </h1>
       <CreateOptions
         goToNewCourse={_event => self.send(UpdateCurrent(NewCourse))}
       />

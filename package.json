@@ -3,10 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-boost": "^0.1.15",
+    "apollo-cache-inmemory": "^1.2.9",
+    "apollo-client": "^2.4.1",
+    "apollo-link": "^1.2.2",
+    "apollo-link-context": "^1.0.8",
+    "apollo-link-error": "^1.1.0",
+    "apollo-link-http": "^1.5.4",
+    "apollo-link-ws": "^1.0.8",
     "bs-axios": "0.0.39",
     "bs-fetch": "^0.3.0",
+    "graphql": "^14.0.0",
+    "graphql-tag": "^2.9.2",
+    "graphql_ppx": "^0.2.7",
     "plyr": "^3.4.3",
-    "reason-scripts": "0.9.0"
+    "react-apollo": "^2.1.11",
+    "reason-apollo": "^0.13.0",
+    "reason-scripts": "0.9.0",
+    "subscriptions-transport-ws": "^0.9.14"
   },
   "scripts": {
     "start": "react-scripts start",
